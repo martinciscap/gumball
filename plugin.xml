@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="cordova-plugin-mynfc" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>MyNfcPlugin</name>
+    
+    <!-- Archivo JavaScript para la interfaz -->
+    <js-module name="nfcReader" src="www/nfcReader.js">
+        <clobbers target="nfcReader" />
+    </js-module>
+
+    <platform name="android">
+        <!-- Se requiere permiso para usar NFC -->
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.NFC" />
+        </config-file>
+
+        <!-- Archivo fuente Java -->
+        <source-file src="src/android/MyNfcPlugin.java" target-dir="src/com/example/nfcplugin" />
+
+        <!-- Definición de la característica para Cordova -->
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MyNfcPlugin">
+                <param name="android-package" value="com.example.nfcplugin.MyNfcPlugin" />
+            </feature>
+        </config-file>
+    </platform>
+</plugin>
