@@ -1,0 +1,9 @@
+{
+    "name": "cordova-plugin-mynfc",
+    "version": "1.0.0",
+    "description": "Plugin para leer NFC con Cordova",
+    "cordova": {
+      "id": "cordova-plugin-mynfc",
+      "platforms": ["android"]
+    }
+  }  
